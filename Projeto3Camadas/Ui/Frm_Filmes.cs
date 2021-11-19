@@ -26,9 +26,9 @@ namespace Projeto3Camadas
         {
             fildto.Filme = txtFilme.Text;
             fildto.Desc = txtDesc.Text;
-            dgvFilme.DataSource = filbll.Listar();
             MessageBox.Show("Cadastro com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            filbll.Listar();
+            filbll.Inserir(fildto);
+            dgvFilme.DataSource = filbll.Listar();
             txtDesc.Clear();
             txtFilme.Clear();
             txtID.Clear();

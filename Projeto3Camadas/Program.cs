@@ -16,7 +16,7 @@ namespace Projeto3Camadas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Filmes());
+            Application.Run(new Ui.Frm_Login());
         }
     }
 }
