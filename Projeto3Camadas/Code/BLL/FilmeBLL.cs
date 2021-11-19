@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +21,18 @@ namespace Projeto3Camadas.Code.BLL
         }
         public void Editar(FilmeDTO fildto)
         {
-
+            string alterar = $"update {tabela} set filme = '{fildto.Filme}', descricao = '{fildto.Desc}' where id = '{fildto.Id}';";
+            conexao.ExecutarComando(alterar);
         }
         public void Excluir(FilmeDTO fildto)
         {
-
+            string excluir = $"delete from {tabela} where id = '{fildto.Id}';";
+            conexao.ExecutarComando(excluir);
         }
-        public void Listar(FilmeDTO fildto)
+        public DataTable Listar()
         {
-
+            string sql = $"select * from {tabela} order by id;";
+            return conexao.ExecutarConsulta(sql);
         }
     }
 }

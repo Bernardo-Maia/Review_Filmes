@@ -38,8 +38,8 @@ namespace Projeto3Camadas
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtFilme = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvFilme = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilme)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -120,20 +120,22 @@ namespace Projeto3Camadas
             this.txtDesc.Size = new System.Drawing.Size(217, 20);
             this.txtDesc.TabIndex = 8;
             // 
-            // dataGridView1
+            // dgvFilme
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 144);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(663, 150);
-            this.dataGridView1.TabIndex = 9;
+            this.dgvFilme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFilme.Location = new System.Drawing.Point(37, 144);
+            this.dgvFilme.Name = "dgvFilme";
+            this.dgvFilme.Size = new System.Drawing.Size(663, 150);
+            this.dgvFilme.TabIndex = 9;
+            this.dgvFilme.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFilme_CellContentClick);
+            this.dgvFilme.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFilme_CellContentClick);
             // 
             // Frm_Filmes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvFilme);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtFilme);
             this.Controls.Add(this.txtID);
@@ -145,7 +147,8 @@ namespace Projeto3Camadas
             this.Controls.Add(this.label1);
             this.Name = "Frm_Filmes";
             this.Text = "Frm_Filmes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Frm_Filmes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilme)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +165,7 @@ namespace Projeto3Camadas
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtFilme;
         private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvFilme;
     }
 }
 
